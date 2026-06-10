@@ -1,0 +1,55 @@
+:root {
+  /* Background layers */
+  --color-bg:               #0d0c1a;
+  --color-surface:          #161527;
+  --color-surface-elevated: #1e1c35;
+  --color-border:           #2a2847;
+  --color-border-subtle:    #1f1d38;
+
+  /* Primary — warm amber */
+  --color-primary:          #f4a035;
+  --color-primary-hover:    #f5b055;
+  --color-primary-muted:    rgba(244, 160, 53, 0.15);
+
+  /* Accent — soft purple */
+  --color-accent:           #9b7fe8;
+  --color-accent-hover:     #b09ef0;
+  --color-accent-muted:     rgba(155, 127, 232, 0.15);
+
+  /* Semantic */
+  --color-danger:           #ff5c5c;
+  --color-danger-muted:     rgba(255, 92, 92, 0.1);
+
+  /* Text */
+  --color-text:             #f0eeff;
+  --color-text-secondary:   #8e89b8;
+  --color-text-muted:       #5a5685;
+
+  /* Agent face palette */
+  --color-face-skin:        #f7d5b0;
+  --color-face-skin-shadow: #f0c49a;
+  --color-face-blush:       #e8928a;
+  --color-face-brow:        #7a5530;
+  --color-face-iris:        #9b7fe8;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --top-bar-height:      64px;
+  --bottom-panel-height: 110px;
+  --safe-bottom:         env(safe-area-inset-bottom, 12px);
+}

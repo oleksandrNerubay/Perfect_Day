@@ -1,0 +1,113 @@
+.agent-face {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Responsive face size: fills ~65% of narrow screens, capped at 300px */
+.agent-svg {
+  width:  min(65vw, 300px);
+  height: min(65vw, 300px);
+  filter: drop-shadow(0 8px 32px rgba(13, 12, 26, 0.65));
+  transition: filter 0.4s ease;
+}
+
+.state-listening .agent-svg {
+  filter: drop-shadow(0 0 44px rgba(155, 127, 232, 0.38))
+          drop-shadow(0 8px 24px rgba(13, 12, 26, 0.55));
+}
+.state-speaking .agent-svg {
+  filter: drop-shadow(0 0 40px rgba(244, 160, 53, 0.32))
+          drop-shadow(0 8px 24px rgba(13, 12, 26, 0.55));
+}
+.state-thinking .agent-svg {
+  filter: drop-shadow(0 0 34px rgba(155, 127, 232, 0.22))
+          drop-shadow(0 8px 24px rgba(13, 12, 26, 0.55));
+}
+
+/* Eyebrows */
+.eyebrow {
+  stroke: var(--color-face-brow);
+  stroke-width: 5;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Pulse rings for listening state */
+.pulse-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* match the SVG rendered size */
+  width:  min(65vw, 300px);
+  height: min(65vw, 300px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  opacity: 0;
+  animation: pulse-out 2.2s ease-out infinite;
+}
+
+.pulse-ring--delayed {
+  animation-delay: 1.1s;
+}
+
+@keyframes pulse-out {
+  0%   { transform: scale(0.9);  opacity: 0.65; }
+  100% { transform: scale(1.45); opacity: 0;    }
+}
+
+/* Thinking dots */
+.dot { animation-fill-mode: both; }
+.dot-1 { animation: dot-bob 1.1s 0.00s ease-in-out infinite; }
+.dot-2 { animation: dot-bob 1.1s 0.18s ease-in-out infinite; }
+.dot-3 { animation: dot-bob 1.1s 0.36s ease-in-out infinite; }
+
+@keyframes dot-bob {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 1;   }
+}
+
+/* State label */
+.state-label {
+  min-height: 20px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.state-label--listening { color: var(--color-accent); }
+.state-label--thinking  { color: var(--color-text-secondary); }
+
+/* Speech caption bubble */
+.agent-caption {
+  max-width: min(80vw, 340px);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  animation: caption-in 0.3s ease;
+}
+
+.agent-caption p {
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@keyframes caption-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}

@@ -1,0 +1,100 @@
+.bottom-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--bottom-panel-height) + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls-row {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  gap: var(--space-3);
+}
+
+.secondary-group {
+  display: flex;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.secondary-group--right {
+  justify-content: flex-end;
+}
+
+.secondary-btn {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.secondary-btn:active {
+  transform: scale(0.96);
+}
+
+/* Primary mic button */
+.mic-btn {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  border: none;
+  color: var(--color-bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--color-primary-muted);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.mic-btn:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 6px 28px rgba(244, 160, 53, 0.45);
+  transform: scale(1.05);
+}
+
+.mic-btn:active {
+  transform: scale(0.96);
+}
+
+.mic-btn--listening {
+  background: var(--color-accent);
+  box-shadow: 0 4px 28px var(--color-accent-muted);
+  animation: mic-pulse 1.8s ease-in-out infinite;
+}
+
+.mic-btn--speaking {
+  background: var(--color-danger);
+  box-shadow: 0 4px 20px rgba(255, 92, 92, 0.35);
+}
+
+@keyframes mic-pulse {
+  0%, 100% { box-shadow: 0 4px 28px rgba(155, 127, 232, 0.3); }
+  50%       { box-shadow: 0 4px 48px rgba(155, 127, 232, 0.7),
+                          0 0 0 10px rgba(155, 127, 232, 0.08); }
+}

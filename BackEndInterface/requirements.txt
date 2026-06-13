@@ -1,6 +1,11 @@
-flask
-pymongo
-python-dotenv
-bcrypt
-uuid
-psycopg2-binary
+flask>=3.0
+flask-sock>=0.7
+pymongo>=4.7
+python-dotenv>=1.0
+deepgram-sdk>=3.0
+openai-whisper>=20231117
+requests>=2.31
+pytest>=8.0
+mongomock>=4.1
+responses>=0.25
+pydub>=0.25

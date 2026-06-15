@@ -7,6 +7,7 @@ from routes.session import bp as session_bp
 from routes.transcribe import bp as transcribe_bp, sock as transcribe_sock
 from routes.transcript import bp as transcript_bp
 from routes.classify import bp as classify_bp
+from routes.recommend import bp as recommend_bp
 
 
 def create_app() -> Flask:
@@ -19,6 +20,7 @@ def create_app() -> Flask:
     app.register_blueprint(transcribe_bp)
     app.register_blueprint(transcript_bp)
     app.register_blueprint(classify_bp)
+    app.register_blueprint(recommend_bp)
 
     ensure_indexes()
 

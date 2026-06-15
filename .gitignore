@@ -31,3 +31,16 @@ Thumbs.db
 
 # Claude Code internal settings
 .claude/settings.local.json
+
+# Yelp raw dataset (large, not for VCS)
+yelp_dataset/
+
+# Generated data artifacts (rebuild with ingest.py / build scripts)
+data/venues_seed.json
+data/rep_conversations.jsonl
+
+# Trained model artifacts (rebuild with ml/pretrain_affinity.py, ml/rep_classifier.py)
+models/
+
+# Misc project docs
+*.docx
